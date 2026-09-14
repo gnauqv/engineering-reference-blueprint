@@ -1,0 +1,12 @@
+{
+  // Tự động format code mỗi khi bấm lưu (Ctrl + S)
+  "editor.formatOnSave": true,
+  // Thống nhất kích thước tab hiển thị
+  "editor.tabSize": 2,
+  // Đảm bảo luôn có dòng trống ở cuối file
+  "files.insertFinalNewline": true,
+  // Tự động dọn dẹp khoảng trắng thừa cuối dòng
+  "files.trimTrailingWhitespace": true,
+  // Không tự động kiểm tra code đã loại trừ trong gitignore
+  "search.useIgnoreFiles": true
+}

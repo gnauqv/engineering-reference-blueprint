@@ -1,0 +1,26 @@
+# ==============================================================================
+# DOCKERFILE FRONTEND (MULTI-STAGE BUILD)
+# Tối ưu hóa dung lượng: Tách riêng bước Build và bước Phục vụ (Nginx)
+# ==============================================================================
+
+# GIAI ĐOẠN 1: Biên dịch mã nguồn Frontend
+FROM node:20-alpine AS builder
+# Thiết lập thư mục làm việc trong container
+WORKDIR /app
+# Copy file khai báo thư viện trước để tận dụng Docker layer caching
+COPY package*.json ./
+# Cài đặt toàn bộ dependencies
+RUN npm ci
+# Copy toàn bộ mã nguồn vào
+COPY . .
+# Thực thi lệnh build tĩnh (ra thư mục dist hoặc build)
+RUN npm run build
+
+# GIAI ĐOẠN 2: Chạy production bằng Web Server tĩnh Nginx siêu nhẹ
+FROM nginx:alpine
+# Copy file build từ giai đoạn 1 sang thư mục phục vụ web của Nginx
+COPY --from=builder /app/dist /usr/share/nginx/html
+# Mở cổng 80 cho web
+EXPOSE 80
+# Chạy Nginx ở chế độ foreground
+CMD ["nginx", "-g", "daemon off;"]

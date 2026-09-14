@@ -1,0 +1,35 @@
+# ==============================================================================
+# DOCKER COMPOSE MÔI TRƯỜNG PHÁT TRIỂN (LOCAL DEV)
+# Mục đích: Dựng cơ sở dữ liệu và cache sẵn sàng chỉ bằng 1 câu lệnh
+# ==============================================================================
+
+version: '3.8'
+
+services:
+  # Dịch vụ Cơ sở dữ liệu PostgreSQL
+  postgres-db:
+    image: postgres:16-alpine
+    container_name: local_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rootpassword
+      POSTGRES_DB: app_db
+    ports:
+      # Map cổng 5432 máy thật vào cổng 5432 container
+      - "5432:5432"
+    volumes:
+      # Lưu dữ liệu bền vững, không mất khi tắt container
+      - postgres_data:/var/lib/postgresql/data
+
+  # Dịch vụ Lưu trữ bộ nhớ đệm Redis
+  redis-cache:
+    image: redis:7-alpine
+    container_name: local_redis
+    ports:
+      - "6379:6379"
+
+# Khai báo ổ đĩa ảo để lưu trữ dữ liệu bền vững
+volumes:
+  postgres_data:
+    driver: local

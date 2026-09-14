@@ -1,0 +1,15 @@
+{
+  // Danh sách extension khuyến nghị toàn bộ thành viên trong dự án nên cài đặt
+  "recommendations": [
+    // Hỗ trợ đọc file .editorconfig
+    "editorconfig.editorconfig",
+    // Format code tự động
+    "esbenp.prettier-vscode",
+    // Kiểm tra chính tả và lỗi cú pháp
+    "dbaeumer.vscode-eslint",
+    // Quản lý và trực quan hóa container Docker
+    "ms-azuretools.vscode-docker",
+    // Hỗ trợ chỉnh sửa và xem trước file Markdown
+    "yzhang.markdown-all-in-one"
+  ]
+}
