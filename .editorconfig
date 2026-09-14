@@ -1,0 +1,89 @@
+# EditorConfig giúp thống nhất coding style giữa các editor/IDE.
+
+# Xem: https://editorconfig.org/
+
+root = true
+
+# ------------------------------------------------------------
+
+# Default
+
+# ------------------------------------------------------------
+
+[*]
+
+# UTF-8 là encoding mặc định cho source code và documentation.
+
+charset = utf-8
+
+# Loại bỏ whitespace ở cuối dòng khi save file.
+
+trim_trailing_whitespace = true
+
+# Đảm bảo file kết thúc bằng một newline.
+
+insert_final_newline = true
+
+# Dùng LF để tránh khác biệt line ending giữa Windows/Linux/macOS.
+
+end_of_line = lf
+
+# ------------------------------------------------------------
+
+# Code files
+
+# ------------------------------------------------------------
+
+[*.{js,jsx,ts,tsx,vue,css,scss,html,json,yml,yaml,md}]
+indent_style = space
+indent_size = 2
+
+# ------------------------------------------------------------
+
+# Python
+
+# ------------------------------------------------------------
+
+[*.py]
+indent_style = space
+indent_size = 4
+
+# ------------------------------------------------------------
+
+# Java
+
+# ------------------------------------------------------------
+
+[*.java]
+indent_style = space
+indent_size = 4
+
+# ------------------------------------------------------------
+
+# SQL
+
+# ------------------------------------------------------------
+
+[*.sql]
+indent_style = space
+indent_size = 2
+
+# ------------------------------------------------------------
+
+# Shell
+
+# ------------------------------------------------------------
+
+[*.sh]
+indent_style = space
+indent_size = 2
+
+# ------------------------------------------------------------
+
+# Makefile
+
+# ------------------------------------------------------------
+
+[Makefile]
+indent_style = tab
+indent_size = 4

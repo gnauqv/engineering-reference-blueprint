@@ -1,0 +1,155 @@
+```gitignore
+# ==============================================================================
+# GITIGNORE — ENGINEERING REFERENCE BLUEPRINT
+# ==============================================================================
+#
+# MỤC ĐÍCH:
+# - Không commit file tạm, file sinh tự động, dependency, build output
+#   hoặc thông tin nhạy cảm.
+# - Dùng làm baseline cho các project Full-Stack phổ biến:
+#   React / TypeScript / Node.js / Python / Java.
+#
+# NGUYÊN TẮC:
+# - Chỉ ignore những file không cần thiết hoặc không nên đưa lên Git.
+# - Không ignore configuration cần thiết cho project.
+# - Không ignore .env.example vì đây là file template cần được commit.
+# ==============================================================================
+
+
+# ==============================================================================
+# 1. OPERATING SYSTEM
+# ==============================================================================
+
+.DS_Store
+Thumbs.db
+
+
+# ==============================================================================
+# 2. IDE / EDITOR
+# ==============================================================================
+
+# IntelliJ IDEA / WebStorm / PyCharm
+.idea/
+
+# VS Code
+# Giữ lại shared workspace configuration.
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Temporary editor files
+*.swp
+*.swo
+
+
+# ==============================================================================
+# 3. ENVIRONMENT VARIABLES / SECRETS
+# ==============================================================================
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Private keys / certificates
+*.pem
+*.key
+
+# LƯU Ý:
+# .env.example KHÔNG bị ignore và phải được commit.
+
+
+# ==============================================================================
+# 4. DEPENDENCIES
+# ==============================================================================
+
+# Node.js
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python tooling cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Java / JVM
+target/
+.gradle/
+
+
+# ==============================================================================
+# 5. BUILD OUTPUT
+# ==============================================================================
+
+dist/
+build/
+out/
+.next/
+
+# Framework / tooling caches
+.cache/
+.parcel-cache/
+.turbo/
+
+
+# ==============================================================================
+# 6. LOGS / DEBUG OUTPUT
+# ==============================================================================
+
+*.log
+
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Optional generic debug files
+*.pid
+*.seed
+
+
+# ==============================================================================
+# 7. LOCAL DATABASE / DATABASE ARTIFACTS
+# ==============================================================================
+
+# SQLite
+*.sqlite
+*.sqlite3
+*.db
+
+# Local database dumps
+*.dump
+*.sql.bak
+
+
+# ==============================================================================
+# 8. TEST / COVERAGE OUTPUT
+# ==============================================================================
+
+coverage/
+htmlcov/
+
+.coverage
+.coverage.*
+
+
+# ==============================================================================
+# 9. OS / TOOLING TEMPORARY FILES
+# ==============================================================================
+
+*.tmp
+*.temp
+*.bak
+
+
+# ==============================================================================
+# END
+# ==============================================================================
+```
