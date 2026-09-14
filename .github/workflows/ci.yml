@@ -21,7 +21,7 @@ jobs:
     steps:
       # Bước 1: Kéo toàn bộ mã nguồn của repo về máy ảo
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       # Bước 2: Cài đặt môi trường Node.js phiên bản 20
       - name: Setup Node.js
